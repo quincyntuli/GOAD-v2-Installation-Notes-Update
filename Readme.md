@@ -84,17 +84,17 @@ pip install ansible-core==2.12.6
 pip install pywinrm
 ```
 
-### 13 Install galaxy requirements
+### 13 Run the dependency check script
+
+```bash
+./goad -t check -l GOAD -p virtualbox -m local
+```
+
+### 14 Install galaxy requirements
 ```bash
 ansible-galaxy install -r requirements.yml
 ```
 
-### 14 Run the dependency check script
-
-```bash
-cd GOAD/
-./goad -t check -l GOAD -p virtualbox -m local
-```
 
 
 If all requirements are met then we are ready to start the VMs and run the playbooks for make the VM insecure
