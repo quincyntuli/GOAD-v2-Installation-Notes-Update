@@ -64,13 +64,13 @@ git clone https://github.com/Orange-Cyberdefense/GOAD.git
 
 ### 09 Create the Virtual Environment
 ```bash
-python3 -m venv venvGOAD
+cd GOAD/ansible
+python3 -m venv .venvGOAD
 ```
 
 ### 10 Activate the Virtual Environment
 ```bash
-cd GOAD/ansible
-source ~/venvGOAD/bin/activate
+source .venvGOAD/bin/activate
 ```
 
 Within the virtual environment, install ansible and pywinrm
@@ -87,11 +87,13 @@ pip install pywinrm
 ### 13 Run the dependency check script
 
 ```bash
-./goad -t check -l GOAD -p virtualbox -m local
+cd ..
+./goad.sh -t check -l GOAD -p virtualbox -m local
 ```
 
 ### 14 Install galaxy requirements
 ```bash
+cd ansible
 ansible-galaxy install -r requirements.yml
 ```
 
