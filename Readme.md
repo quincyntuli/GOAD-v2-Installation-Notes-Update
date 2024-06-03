@@ -1,4 +1,4 @@
-## LAB Computer Specifications
+## LAB Computer Specifications.
 
 
 These notes are based on the installation instructions from [MayFly's repository](https://github.com/mayfly277). Please visit that repository for a more accurate representation of the installation instructions. These are merely my notes and I fully expect that there will be errors and inaccuracies.
