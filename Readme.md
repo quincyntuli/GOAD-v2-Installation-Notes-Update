@@ -202,5 +202,5 @@ ansible_winrm_server_cert_validation=ignore
 
 Direct Link to files ...
 
-qdada_hosts
-set_timezone_za.yml`
+- [qdada_hosts](https://github.com/quincyntuli/GOAD-v2-Installation-Notes-Update/blob/main/qdada_hosts)
+- [set_timezone_za.yml](https://github.com/quincyntuli/GOAD-v2-Installation-Notes-Update/blob/main/set_timezone_za.yml)
