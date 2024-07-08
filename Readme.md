@@ -1,7 +1,7 @@
 ## LAB Computer Specifications
 
 
-These notes are ~~based on~~ copied the installation instructions from [MayFly's repository](https://github.com/mayfly277). Please visit that repository for a more accurate representation of the installation instructions. These are merely my notes and I fully expect that there will be errors and inaccuracies.
+These notes are ~~based on~~ copied from the installation instructions from [MayFly's repository](https://github.com/mayfly277). Please visit that repository for a more accurate representation of the installation instructions. These are merely my notes and I fully expect that there will be errors and inaccuracies.
 
 The lab setup was attempted on a computer with the following specs
 
@@ -148,3 +148,59 @@ $ANSIBLE_COMMAND vulnerabilities.yml  # Configure some vulnerabilities
 $ANSIBLE_COMMAND reboot.yml           # reboot all
 ```
 
+### 16 Optional Time Adjustment
+
+Since I live in Johannesburg, it made sense for me to synchronize the lab to local time.
+Add the following files to the path ```
+```r
+~/GOAD/ansible
+```
+
+`file qdada_hosts`
+
+```
+[windows]
+dc01 ansible_host=192.168.56.10
+dc02 ansible_host=192.168.56.11
+dc03 ansible_host=192.168.56.12
+srv02 ansible_host=192.168.56.22
+srv03 ansible_host=192.168.56.23
+
+
+[windows:vars]
+ansible_user=vagrant
+ansible_password=vagrant
+ansible_port=5985
+ansible_connection=winrm
+ansible_winrm_transport=ntlm
+ansible_winrm_server_cert_validation=ignore
+```
+
+`file set_timezone_za.yml`
+
+```
+---
+- name: Set Time Zone to Africa/Johannesburg
+  hosts: windows
+  tasks:
+    - name: Set time zone
+      community.windows.win_timezone:
+        timezone: "South Africa Standard Time"
+
+    - name: Configure NTP settings
+      win_shell: |
+        w32tm /config /manualpeerlist:"time.windows.com,0x1" /syncfromflags:manual /reliable:YES /update
+        w32tm /resync
+
+    - name: Ensure NTP service is running
+      win_service:
+        name: W32Time
+        start_mode: auto
+        state: started
+
+```
+
+Direct Link to files ...
+
+qdada_hosts
+set_timezone_za.yml`

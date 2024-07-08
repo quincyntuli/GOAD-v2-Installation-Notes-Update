@@ -1,0 +1,15 @@
+[windows]
+dc01 ansible_host=192.168.56.10
+dc02 ansible_host=192.168.56.11
+dc03 ansible_host=192.168.56.12
+srv02 ansible_host=192.168.56.22
+srv03 ansible_host=192.168.56.23
+
+
+[windows:vars]
+ansible_user=vagrant
+ansible_password=vagrant
+ansible_port=5985
+ansible_connection=winrm
+ansible_winrm_transport=ntlm
+ansible_winrm_server_cert_validation=ignore
