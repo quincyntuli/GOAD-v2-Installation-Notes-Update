@@ -104,7 +104,7 @@ If all requirements are met then we are ready to start the VMs and run the playb
 First, we let vagrant setup the 5 instances. The ISO will be downloaded and the VMs will be setup. If   a local copy of the .iso already exists then this download part will be skipped and the machine will be imported from the .iso and built.
 
 ```bash
-cd ad/GOAD/providers/virtualbox
+cd ~/GOAD/ad/GOAD/providers/virtualbox
 vagrant up
 ```
 
@@ -116,7 +116,7 @@ cd ansible # on my installation that path is ~/GOAD/ansible
 ansible-playbook -i ../ad/GOAD/data/inventory -i ../ad/GOAD/providers/virtualbox/inventory main.yml
 ```
 
-My recommendation is to play the individual playbooks one by one to give each VM a chance to complete the build process so as to respond properly to the next set of tasks for each playbook.
+My recommendation is to play the individual playbooks one by one to give each VM a chance to complete the build process so and to respond properly to the next set of tasks for each playbook.
 
 ```bash
 ansible-playbook build.yml
