@@ -97,7 +97,7 @@ cd ..
 ./goad.sh -t check -l GOAD -p virtualbox -m local
 ```
 
-If all requirements are met then we are ready to start the VMs and run the playbooks for make the VM insecure
+If all requirements are met then we are ready to start the VMs and run the playbooks for make the VM insecure.
 
 ### 15 Lets play
 
@@ -112,7 +112,7 @@ vagrant up
 Once the VMs have been setup and running, it is time to make the lab vulnerable. At this stage the instructions tell us to play the playbook for all playbooks by executing...
 
 ```bash
-cd ansible # on my installation that path is ~/GOAD/ansible
+cd ~/GOAD/ansible
 ansible-playbook -i ../ad/GOAD/data/inventory -i ../ad/GOAD/providers/virtualbox/inventory main.yml
 ```
 
