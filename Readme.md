@@ -204,3 +204,10 @@ Direct Link to files ...
 
 - [qdada_hosts](https://github.com/quincyntuli/GOAD-v2-Installation-Notes-Update/blob/main/qdada_hosts)
 - [set_timezone_za.yml](https://github.com/quincyntuli/GOAD-v2-Installation-Notes-Update/blob/main/set_timezone_za.yml)
+
+```
+# inside the virtual environment (venGOAD) and  from the folder
+# ~/GOAD/ansible; run the command
+ansible-playbook -i qdada_hosts set_timezone_za.yml
+```
+`
